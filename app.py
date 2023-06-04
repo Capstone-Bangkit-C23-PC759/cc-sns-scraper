@@ -1,9 +1,12 @@
+import os
 import json
 import datetime
 from flask import Flask
 from flask import request
+from dotenv import load_dotenv
 from scrapper import twitter
 
+load_dotenv()
 app = Flask(__name__)
 
 @app.route("/",methods=['GET'])
@@ -72,5 +75,7 @@ def get_tweets_detail():
 
     tweets = twitter.get_detail_tweets(username,count,since)
     return json.dumps(tweets,default=str)
+
+
 if __name__ == '__main__':
-      app.run(host='0.0.0.0', port=80)
+      app.run(host='localhost', port=os.getenv('PORT') or 8000)
