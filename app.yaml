@@ -1,0 +1,3 @@
+runtime: python389
+service: scrapper-main
+entrypoint: python -m flask run
