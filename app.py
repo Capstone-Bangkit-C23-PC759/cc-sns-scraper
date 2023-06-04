@@ -72,3 +72,5 @@ def get_tweets_detail():
 
     tweets = twitter.get_detail_tweets(username,count,since)
     return json.dumps(tweets,default=str)
+if __name__ == '__main__':
+      app.run(host='0.0.0.0', port=80)
