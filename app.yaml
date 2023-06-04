@@ -1,3 +1,3 @@
 runtime: python310
-service: scrapper-main
+service: scraper-main
 entrypoint: python app.py
